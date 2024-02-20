@@ -19,7 +19,6 @@ set(PROJECT_SOURCES
     ./src/mymodule/fib.cpp
 )
 
-
 project(${PROJECT_TARGET})
 
 add_library(${PROJECT_TARGET_LIB} STATIC ${PROJECT_SOURCES})
@@ -28,6 +27,7 @@ add_executable(${PROJECT_TARGET} ${PROJECT_SOURCES})
 
 target_link_libraries(${PROJECT_TARGET} ${PROJECT_TARGET_LIB})
 
+target_compile_options(${PROJECT_TARGET} PRIVATE "-fanalyzer;-Wanalyzer-too-complex")
 target_compile_features(${PROJECT_TARGET} PRIVATE cxx_std_20)
 target_compile_features(${PROJECT_TARGET_LIB} PRIVATE cxx_std_20)
 
