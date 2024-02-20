@@ -5,7 +5,13 @@ this is simple setup for cpp project with gtest and cmake. You just need to rena
 ## How to debug tests/program? 
 
 1. `set(CMAKE_BUILD_TYPE Debug)` in `CMakeLists.txt`
-2. 
+2. in root folder 
+```
+mkdir build && cd build && cmake .. && make 
+cd tests
+gdb ./myproject_tests # remember you can change myproject to something else in CMakeLists.txt files
+# Then google how to use gdb
+```
 
 ## Stuff you may want to change
 
